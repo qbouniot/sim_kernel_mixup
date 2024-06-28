@@ -1,7 +1,6 @@
-# Tailoring Mixup to Data for Calibration
+# Time-series and Tabular Regression experiments
 
-Official code for Similarity Kernel Mixup for regression tasks.
-
+This folder contains code to reproduce regression experiments from [Tailoring Mixup to Data for Calibration](https://arxiv.org/pdf/2311.01434).
 
 ## Prerequisites
 
@@ -35,6 +34,10 @@ The command to run Similarity Kernel Mixup on Exchange_rate is:
 ```
 python main.py --dataset TimeSeries --data_dir ./data/exchange_rate/exchange_rate.txt --ts_name exchange_rate --mixtype kernel_sim --mix_alpha 1. --tau_max_x 5 --tau_max_y 5 --tau_std_x 1. --tau_std_y 1. --use_dropout --mc_dropout --use_manifold 0 --store_model 0 --read_best_model 0 --seed 0
 ```
+
+### Cross-validation
+
+Cross-validation has been used in all experiments to find the best hyperparameters for each method. It can be enabled with the flag `--use_cv`
 
 ## Acknowledgements
 

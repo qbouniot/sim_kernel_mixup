@@ -1,0 +1,9 @@
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.so
+*.o
+
+# Data and exps folders
+classification/data/*
+classification/logs/*
+.vscode/*

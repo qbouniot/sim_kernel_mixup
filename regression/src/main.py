@@ -1,5 +1,5 @@
 from data_generate import load_data
-from utils import set_seed, stats_values, get_unique_file_name, write_result, write_model
+from utils import set_seed, get_unique_file_name, write_result, write_model
 from config import dataset_defaults
 
 import algorithm
@@ -113,7 +113,7 @@ result_path = Path(result_root)
 if not os.path.exists(result_path):
     os.mkdir(result_path)
 
-data_path = Path(f'./src/data/')
+data_path = Path('./src/data/')
 args.data_path = data_path
 
 
@@ -144,7 +144,7 @@ def main():
     if args.read_best_model == 0: # normal train
        
         if args.use_cv:
-            print(f"Starting Cross Validation")
+            print("Starting Cross Validation")
             avg_results = defaultdict(float)
             all_results = []
             for i,data_fold in enumerate(data_packet):
@@ -183,7 +183,7 @@ def main():
             for key in avg_results:
                 avg_results[key] /= len(all_results)
             # write results
-            write_result(args, args.kde_bandwidth, avg_results, result_path, f'kfold_avg')
+            write_result(args, args.kde_bandwidth, avg_results, result_path, 'kfold_avg')
             for i,result_dict in enumerate(all_results):
                 write_result(args, args.kde_bandwidth, result_dict, result_path, f'kfold_{i}')
             if args.store_model:

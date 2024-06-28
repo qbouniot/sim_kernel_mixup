@@ -1,4 +1,4 @@
-name: sim_kernel_mixup
+name: sim_kernel_mixup_regression
 channels:
   - pytorch
   - conda-forge
